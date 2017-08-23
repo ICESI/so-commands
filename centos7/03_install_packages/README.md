@@ -28,7 +28,7 @@ En el fork crear una rama student_id/add-solutions donde student_id es su códig
 | :x | root | Salir de visudo |
 | # su operativos | root | Inicie sesión como el usuario operativos |
 | $ sudo yum install git -y | operativos | Instale el cliente de git |
-| $ cd ~/ | operativos | Ingrese al directorio de usuario del usuario operativos |
+| $ cd ~/ ó cd | operativos | Ingrese al directorio de usuario del usuario operativos |
 | $ git clone https://github.com/student_repository/so-workshop1.git | operativos | Clone el repositorio al que hizo fork al principio de esta guía | 
 | $ cd so-workshop1 | operativos | Ingrese al directorio so-workshop1 |
 | $ git branch -a | operativos | Visualice las ramas disponibles |
