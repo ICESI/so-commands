@@ -15,7 +15,7 @@ En el fork crear una rama student_id/add-solutions donde student_id es su códig
 | $ pwd | redes | Verifique el lugar del path donde se encuentra |
 | $ exit | redes | Salga de la sesión del usuario redes |
 | # su operativos | root | Inicie sesión como el usuario operativos |
-| $ cd ~/ | operativos | Ingrese al directorio de usuario del usuario operativos |
+| $ cd ~/ ó cd | operativos | Ingrese al directorio de usuario del usuario operativos |
 | $ pwd | operativos | Verifique el lugar del path donde se encuentra |
 | $ clear | operativos | Borre los datos de la consola de Linux |
 | $ sudo yum install git -y | operativos | Verifique que el usuario operativos no tiene permisos para ejecutar yum |
