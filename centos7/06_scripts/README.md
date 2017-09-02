@@ -2,6 +2,11 @@
 
 ## Scripts y Ejecución
 
+### Script que ejecuta comandos de consola
+
+Cree un script con nombre bash_script
+
+**bash_script**
 ```
 # vi bash_script
 #!/bin/sh
@@ -12,6 +17,8 @@ sleep 2
 path=`pwd`
 echo "estoy en $path"
 ```
+
+Digite los siguientes comandos y reflexione sobre los resultados obtenidos
 
 ```
 [operativos@localhost scripts]$ ./bash_script
@@ -33,11 +40,18 @@ soy operativos
 estoy en /home/operativos/scripts
 ```
 
+### Script en python
+
+Cree un script con nombre python_script
+
+**python_script**
 ```
 # vi python_script
 #!/usr/bin/python
 print('script con python')
 ```
+
+Digite los siguientes comandos y reflexione sobre los resultados obtenidos
 
 ```
 [operativos@localhost scripts]$ ./python_script
@@ -54,3 +68,23 @@ total 4
 [operativos@localhost scripts]$ ./python_script
 script con python
 ```
+
+### Script en python que ejecutan comandos de consola
+
+Cree un script con nombre fake_ls
+
+**fake_ls**
+```
+#!/usr/bin/python
+
+print("Doing something...")
+
+from subprocess import call
+call(["ls"])
+```
+
+Digite los siguientes comandos y reflexione sobre los resultados obtenidos
+
+```
+# alias ls=./fake_ls
+# ls
