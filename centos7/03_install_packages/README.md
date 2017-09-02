@@ -33,7 +33,7 @@ En el fork crear una rama student_id/add-solutions donde student_id es su códig
 | $ cd so-workshop1 | operativos | Ingrese al directorio so-workshop1 |
 | $ git branch -a | operativos | Visualice las ramas disponibles |
 | $ git checkout student_id/add-solutions | operativos | Cambie a la rama student_id/add-solutions |
-| $ mkdir student_id | operativos | Cree un directorio de nombre student_id donde student_id es su códugo de estudiante |
+| $ mkdir student_id | operativos | Cree un directorio de nombre student_id donde student_id es su código de estudiante |
 | $ touch README.md | operativos | Cree el archivo README.md |
 | $ git status | operativos | Verifique el estado de los archivos del repositorio |
 | $ git add README.md | operativos | Adicione el archivo README.md al commit |
