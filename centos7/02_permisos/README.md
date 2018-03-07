@@ -10,14 +10,14 @@
 | # ls -l message_1.txt | root | Observe los permisos del archivo message_1.txt |
 | # vi message_1.txt | root | Edite el archivo message_1.txt |
 | # cat filename | root | Ver el contenido del archivo message_1.txt |
-| --- | redes | Los siguientes comandos se ejcutan como el usuario redes |
+| # adduser redes | root | Cree un usuario de nombre redes |
+| # man adduser | root | Consulte la ayuda del comando adduser |
+| # su redes | redes | Los siguientes comandos se ejcutan como el usuario redes |
 | $ cd /tmp | redes | Cambie el path al directorio tmp |
 | $ cat filename | root | Intente ver el contenido del archivo message_1.txt |
 | --- | root | Los siguientes comandos se ejcutan como el usuario root |
 | # chmod o-r secrets.txt | root | Eliminar los permisos de lectura (r=read,w=write,x=execute) de los otros (u=user,g=group,o=others) |
 | chmod 640 secrets.txt | root | Dar permisos de lectura y escritura al dueño(7=4(r)+2(w)+0(x)), permisos de lectura al grupo (4=4(r)+0(w)+0(x) |
-| # adduser redes | root | Cree un usuario de nombre redes |
-| # man adduser | root | Consulte la ayuda del comando adduser |
 | # groups redes | root | Obtener los grupos a los que pertenece el usuario redes |
 | # gpasswd -a redes root | usuario root | Adicione el usuario redes al grupo root |
 | --- | redes | Los siguientes comandos se ejcutan como el usuario redes |
