@@ -19,7 +19,7 @@
 | # chmod o-r message_1.txt | root | Eliminar los permisos de lectura (r=read,w=write,x=execute) de los otros (u=user,g=group,o=others) |
 | # chmod 640 secrets.txt | root | Dar permisos de lectura y escritura al dueño(7=4(r)+2(w)+1(x)), permisos de lectura al grupo (4=4(r)+0(w)+0(x) |
 | # groups redes | root | Obtener los grupos a los que pertenece el usuario redes |
-| # gpasswd -a redes root | usuario root | Adicione el usuario redes al grupo root |
+| # gpasswd -a redes root | root | Adicione el usuario redes al grupo root |
 | --- | redes | Los siguientes comandos se ejcutan como el usuario redes |
 | $ groups | redes | Obtener los grupos a los que pertenece el usuario redes |
 | $ cd /tmp | redes | Cambie el path al directorio tmp |
