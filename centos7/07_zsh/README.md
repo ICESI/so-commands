@@ -4,9 +4,7 @@
 ZSH es un interprete de comandos alternativo a bash. En esta guía
 se muestra la instalación de zsh y un framework para gestionar su configuración
 
-## Guía
-
-### Instalación
+## Instalación
 
 Digite los siguientes comandos como root
 
@@ -20,7 +18,9 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 $ chsh -s /bin/zsh
 ```
 
-### Plugins (vi-mode, zsh-autosuggestions)
+## Plugins 
+
+### Plugin vi-mode
 
 Para habilitar el plugin vi-mode realice lo siguiente
 ```
@@ -33,6 +33,8 @@ $ source ~/.zshrc
 
 Una vez habilitado presione la tecla "ESC" al momento de requerir editar un comando y entrará a modo vi.
 Puede usar por ejemplos las formas de navegación de vi: w (word), b (backwards), dw (delete-word), R (overwrite).
+
+### Plugin zsh-autosuggestions
 
 Para instalar y habilitar el plugin zsh-autosuggestions realice lo siguiente
 
@@ -58,7 +60,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=1"
 $ source ~/.zshrc
 ```
 
-### Atajos
+## Atajos
 
 En la siguiente tabla encontrará atajos para usar con git:
 https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
