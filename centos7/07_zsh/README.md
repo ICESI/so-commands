@@ -6,6 +6,8 @@ se muestra la instalación de zsh y un framework para gestionar su configuració
 
 ## Guía
 
+### Instalación
+
 Digite los siguientes comandos como root
 
 ```
@@ -18,8 +20,7 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 $ chsh -s /bin/zsh
 ```
 
-En la siguiente tabla encontrará atajos para usar con git:
-https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
+### Plugins (vi-mode, zsh-autosuggestions)
 
 Para habilitar el plugin vi-mode realice lo siguiente
 ```
@@ -56,6 +57,11 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=1"
 :x
 $ source ~/.zshrc
 ```
+
+### Atajos
+
+En la siguiente tabla encontrará atajos para usar con git:
+https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 
 ### Referencias
 * https://github.com/robbyrussell/oh-my-zsh
