@@ -37,7 +37,7 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos, omitir 
 | --- | root | Los siguientes comandos se ejecutan como el usuario root |
 | # adduser distribuidos | | |
 | # passwd distribuidos | | |
-| # su distribuidos | | |
+| # su distribuidos | | Los siguientes comandos se ejecutan como el usuario distribuidos |
 | $ cd ~/ | | |
 | $ mkdir ~/app | | |
 | $ cd ~/app | | |
