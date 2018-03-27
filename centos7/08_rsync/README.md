@@ -25,10 +25,37 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos, omitir 
 | $ cd ~/ | | |
 | $ touch test1 test2 test3 | | |
 | $ tar cvf backup.tar * | | Crea un backup de los archivos |
-| $ mkdir -p /tmp/backups | | |
-| $ rsync -zvh backup.tar /tmp/backups/  |  | Copia el archivo backup al directorio backups |
-| $ mkdir files | | |
-| $ rsync -av --exclude='files' * files/ | | Copia los archivos al directorio files omitiendo el directorio files |
+| $ mkdir ~/backups | | |
+| $ rsync -zvh backup.tar ~/backups/  |  | Copia el archivo backup al directorio backups |
+| $ mkdir ~/files | | |
+| $ rsync -av --exclude='files' * ~/files/ | | Copia los archivos al directorio files omitiendo el directorio files |
+
+### Ejemplo 2
+
+| Comando   | Usuario | Descripción   |
+|------|------|------|
+| --- | root | Los siguientes comandos se ejecutan como el usuario root |
+| # adduser distribuidos | | |
+| # passwd distribuidos | | |
+| # su distribuidos | | |
+| $ cd ~/ | | |
+| $ mkdir ~/app | | |
+| $ cd ~/app | | |
+| $ touch test4 test5 test6 | | |
+| $ cd .. | | |
+| $ mkdir ~/files | | |
+| $ cd ~/files | | |
+| $ touch test7 test8 test9 | | |
+| $ cd .. | | |
+| $ tar cvf remote_backup.tar * | | Crea un backup de los archivos |
+| $ exit | | |
+| --- | operativos | Los siguientes comandos se ejecutan como el usuario operativos |
+| # su operativos | operativos | |
+| $ rsync -avz files/ distribuidos@127.0.0.1:~/files/ |  | Copia los archivos del directorio files a la máquina remota |
+| $ rsync -avzh distribuidos@127.0.0.1:~/app ~/app | | Copia el directorio app de la máquina remota |
+| $ rsync -avzhe ssh distribuidos@127.0.0.1:~/app ~/app2 |  | El mismo comando anterior pero usando ssh (seguro) |
+| $ rsync -avzhe ssh remote_backup.tar distribuidos@127.0.0.1:~/backups/ |  |  |
+| $ rsync -avzhe ssh --progress ~/app distribuidos@127.0.0.1:~/app |  | Muestra el progreso de la copia |
 
 ## Actividades
 * Seleccione al menos 3 de los comandos que se muestran a continuación e indique un caso útil para
@@ -38,11 +65,6 @@ el uso de cada comando. Puede realizar variaciones sobre la fuente y el destino
 |------|------|------|
 | --- | operativos | Los siguientes comandos se ejecutan como el usuario operativos |
 | $ rsync -avzh ~/files /tmp/backups/ |  | Copia el directorio files al directorio backups |
-| $ rsync -avz files/ distribuidos@192.168.0.101:~/ |  |  |
-| $ rsync -avzh distribuidos@192.168.0.101:~/files ~/files |  |  |
-| $ rsync -avzhe ssh distribuidos@192.168.0.101:~/files ~/files |  |  |
-| $ rsync -avzhe ssh backup.tar distribuidos@192.168.0.101:~/backups/ |  |  |
-| $ rsync -avzhe ssh --progress ~/files distribuidos@192.168.0.100:~/files |  |  |
 | $ rsync -avze ssh --include 'R*' --exclude '*' root@192.168.0.101:/var/lib/rpm/ /root/rpm |  |  |
 | $ rsync -avz --delete distribuidos@192.168.0.101:~/files/ . | | |
 | $ rsync -avzhe ssh --max-size='200k' ~/files/ distribuidos@192.168.0.101:~/files | | |
