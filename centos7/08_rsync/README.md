@@ -15,6 +15,8 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos,
 
 ## Comandos Comunes
 
+### Ejemplo 1
+
 | Comando   | Usuario | Descripción   |
 |------|------|------|
 | --- | root | Los siguientes comandos se ejecutan como el usuario root |
@@ -23,19 +25,27 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos,
 | $ cd ~/ | | |
 | $ touch test1 test2 test3 | | |
 | $ tar cvf backup.tar * | | Crea un backup de los archivos |
+| $ mkdir -p /tmp/backups | | |
+| $ rsync -zvh backup.tar /tmp/backups/  |  | Copia el archivo backup al directorio backups |
 | $ mkdir files | | |
-| $ rsync -av --exclude='files' * files/ | | Copia los archivos al directorio files |
-| $ rsync -zvh backup.tar /tmp/backups/  |  | Copia el backup a otro directorio |
-| | | |
-| $ rsync -avzh /home/operativos/files /tmp/backups/ |  |  |
-| $ rsync -avz files/ distribuidos@192.168.0.101:/home/distribuidos/ |  |  |
-| $ rsync -avzh distribuidos@192.168.0.101:~/files /tmp/files |  |  |
-| $ rsync -avzhe ssh distribuidos@192.168.0.101:~/files /tmp/files |  |  |
+| $ rsync -av --exclude='files' * files/ | | Copia los archivos al directorio files omitiendo el directorio files |
+
+## Actividades
+* Seleccione al menos 3 de los comandos que se muestran a continuación e indique un caso útil para
+el uso de cada comando. Puede realizar variaciones sobre la fuente y el destino
+
+| Comando   | Usuario | Descripción   |
+|------|------|------|
+| --- | operativos | Los siguientes comandos se ejecutan como el usuario operativos |
+| $ rsync -avzh ~/files /tmp/backups/ |  | Copia el directorio files al directorio backups |
+| $ rsync -avz files/ distribuidos@192.168.0.101:~/ |  |  |
+| $ rsync -avzh distribuidos@192.168.0.101:~/files ~/files |  |  |
+| $ rsync -avzhe ssh distribuidos@192.168.0.101:~/files ~/files |  |  |
 | $ rsync -avzhe ssh backup.tar distribuidos@192.168.0.101:~/backups/ |  |  |
-| $ rsync -avzhe ssh --progress /home/rpmpkgs root@192.168.0.100:/root/rpmpkgs |  |  |
+| $ rsync -avzhe ssh --progress ~/files distribuidos@192.168.0.100:~/files |  |  |
 | $ rsync -avze ssh --include 'R*' --exclude '*' root@192.168.0.101:/var/lib/rpm/ /root/rpm |  |  |
-| $ rsync -avz --delete root@192.168.0.100:/var/lib/rpm/ . | | |
-| $ rsync -avzhe ssh --max-size='200k' /var/lib/rpm/ root@192.168.0.100:/root/tmprpm | | |
+| $ rsync -avz --delete distribuidos@192.168.0.101:~/files/ . | | |
+| $ rsync -avzhe ssh --max-size='200k' ~/files/ distribuidos@192.168.0.101:~/files | | |
 | $ rsync --remove-source-files -zvh backup.tar /tmp/backups/ | | |
 | $ rsync --dry-run --remove-source-files -zvh backup.tar /tmp/backups/ | | |
 
