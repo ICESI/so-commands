@@ -19,19 +19,25 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos,
 |------|------|------|
 | --- | root | Los siguientes comandos se ejecutan como el usuario root |
 | # yum install rsync | root | Instala ó actualiza rsync |
-| # rsync -zvh backup.tar /tmp/backups/  |  |  |
-|  rsync -avzh /root/rpmpkgs /tmp/backups/ |  |  |
-| rsync -avz rpmpkgs/ root@192.168.0.101:/home/ |  |  |
-| rsync -avzh root@192.168.0.100:/home/tarunika/rpmpkgs /tmp/myrpms |  |  |
-| rsync -avzhe ssh root@192.168.0.100:/root/install.log /tmp/ |  |  |
-| rsync -avzhe ssh backup.tar root@192.168.0.100:/backups/ |  |  |
-| rsync -avzhe ssh --progress /home/rpmpkgs root@192.168.0.100:/root/rpmpkgs |  |  |
-| rsync -avze ssh --include 'R*' --exclude '*' root@192.168.0.101:/var/lib/rpm/ /root/rpm |  |  |
-| touch test | | |
-| rsync -avz --delete root@192.168.0.100:/var/lib/rpm/ . | | |
-| rsync -avzhe ssh --max-size='200k' /var/lib/rpm/ root@192.168.0.100:/root/tmprpm | | |
-| rsync --remove-source-files -zvh backup.tar /tmp/backups/ | | |
-| rsync --dry-run --remove-source-files -zvh backup.tar /tmp/backups/ | | |
+| # su operativos | operativos | |
+| $ cd ~/ | | |
+| $ touch test1 test2 test3 | | |
+| $ tar cvf backup.tar * | | Crea un backup de los archivos |
+| $ mkdir files | | |
+| $ rsync -av --exclude='files' * files/ | | Copia los archivos al directorio files |
+| $ rsync -zvh backup.tar /tmp/backups/  |  | Copia el backup a otro directorio |
+| | | |
+| $ rsync -avzh /home/operativos/files /tmp/backups/ |  |  |
+| $ rsync -avz files/ distribuidos@192.168.0.101:/home/distribuidos/ |  |  |
+| $ rsync -avzh distribuidos@192.168.0.101:~/files /tmp/files |  |  |
+| $ rsync -avzhe ssh distribuidos@192.168.0.101:~/files /tmp/files |  |  |
+| $ rsync -avzhe ssh backup.tar distribuidos@192.168.0.101:~/backups/ |  |  |
+| $ rsync -avzhe ssh --progress /home/rpmpkgs root@192.168.0.100:/root/rpmpkgs |  |  |
+| $ rsync -avze ssh --include 'R*' --exclude '*' root@192.168.0.101:/var/lib/rpm/ /root/rpm |  |  |
+| $ rsync -avz --delete root@192.168.0.100:/var/lib/rpm/ . | | |
+| $ rsync -avzhe ssh --max-size='200k' /var/lib/rpm/ root@192.168.0.100:/root/tmprpm | | |
+| $ rsync --remove-source-files -zvh backup.tar /tmp/backups/ | | |
+| $ rsync --dry-run --remove-source-files -zvh backup.tar /tmp/backups/ | | |
 
 ## Referencias
 * https://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
