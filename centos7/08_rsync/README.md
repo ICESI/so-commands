@@ -2,7 +2,7 @@
 
 ## Descripción
 El aplicativo rsync permite la copia local y remota de archivos con características mejoradas sobre scp.
-Entre las caracteristicas de rsync estan: copia diferencial de archivos,
+Entre las caracteristicas de rsync estan: copia diferencial de archivos, omitir directorios, limitar ancho de banda para transferencia, sincronizar directorios, entre otras.
 
 ## Opciones comunes
 
