@@ -21,9 +21,9 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos, omitir 
 |------|------|------|
 | --- | root | Los siguientes comandos se ejecutan como el usuario root |
 | # yum install rsync | root | Instala ó actualiza rsync |
-| # su operativos | operativos | |
-| $ cd ~/ | | |
-| $ touch test1 test2 test3 | | |
+| # su operativos | operativos | Los siguientes comandos se ejecutan como el usuario operativos |
+| $ cd ~/ | | Cambia al directorio home del usuario actual |
+| $ touch test1 test2 test3 | | Crea algunos archivos para las pruebas |
 | $ tar cvf backup.tar * | | Crea un backup de los archivos |
 | $ mkdir ~/backups | | |
 | $ rsync -zvh backup.tar ~/backups/  |  | Copia el archivo backup al directorio backups |
@@ -52,9 +52,9 @@ Entre las caracteristicas de rsync estan: copia diferencial de archivos, omitir 
 | --- | operativos | Los siguientes comandos se ejecutan como el usuario operativos |
 | # su operativos | operativos | |
 | $ rsync -avz files/ distribuidos@127.0.0.1:~/files/ |  | Copia los archivos del directorio files a la máquina remota |
-| $ rsync -avzh distribuidos@127.0.0.1:~/app ~/app | | Copia el directorio app de la máquina remota |
+| $ rsync -avzh distribuidos@127.0.0.1:~/app ~/app | | Copia el directorio app de la máquina remota en /home/operativos/app |
 | $ rsync -avzhe ssh distribuidos@127.0.0.1:~/app ~/app2 |  | El mismo comando anterior pero usando ssh (seguro) |
-| $ rsync -avzhe ssh remote_backup.tar distribuidos@127.0.0.1:~/backups/ |  |  |
+| $ rsync -avzhe ssh backup.tar distribuidos@127.0.0.1:~/backups/ |  | Copia el archivo backup.tar en la máquina remota |
 | $ rsync -avzhe ssh --progress ~/app distribuidos@127.0.0.1:~/app |  | Muestra el progreso de la copia |
 
 ## Actividades
