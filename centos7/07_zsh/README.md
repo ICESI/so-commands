@@ -60,6 +60,14 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=1"
 $ source ~/.zshrc
 ```
 
+## FAQ
+* No puedo ejecutar el script de instalación de plugins de oh-my-zsh, ¿que hago?
+R / Use este comando para indicar a través de una variable la ubicación del directorio de
+instalación  
+```
+export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
 ## Atajos
 
 En la siguiente tabla encontrará atajos para usar con git:
