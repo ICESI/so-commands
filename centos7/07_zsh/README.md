@@ -72,6 +72,7 @@ R / Use este comando para indicar a través de una variable la ubicación del di
 instalación  
 ```
 export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+:x
 ```
 
 ## Atajos
