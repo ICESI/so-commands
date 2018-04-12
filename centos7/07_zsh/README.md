@@ -60,6 +60,12 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=1"
 $ source ~/.zshrc
 ```
 
+Para modificar el prompt edite el tema configurado en el archivo ~/.zshrc. Para el caso de robbyrussell.zsh-theme
+```
+vi /home/distribuidos/.oh-my-zsh/themes/robbyrussell.zsh-theme
+PROMPT='${ret_status} $(git_prompt_info)'
+```
+
 ## FAQ
 * No puedo ejecutar el script de instalación de plugins de oh-my-zsh, ¿que hago?
 R / Use este comando para indicar a través de una variable la ubicación del directorio de
