@@ -62,7 +62,7 @@ $ source ~/.zshrc
 
 Para modificar el prompt edite el tema configurado en el archivo ~/.zshrc. Para el caso de robbyrussell.zsh-theme
 ```
-vi /home/distribuidos/.oh-my-zsh/themes/robbyrussell.zsh-theme
+vi ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 PROMPT='${ret_status} $(git_prompt_info)'
 ```
 
