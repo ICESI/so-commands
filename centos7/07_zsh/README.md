@@ -22,12 +22,10 @@ $ chsh -s /bin/zsh
 
 ### Plugin vi-mode
 
-Para habilitar el plugin vi-mode realice lo siguiente
+Para habilitar el plugin vi-mode realice lo siguiente (use /plugins= para posicionarse en la linea apropiada)
 ```
 $ vi ~/.zshrc
-/plugins=
 plugins=(git vi-mode)
-:x
 $ source ~/.zshrc
 ```
 
@@ -46,9 +44,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 Adicione el plugin a la lista de plugins activos
 ```
 $ vi ~/.zshrc
-/plugins=
 plugins=(git vi-mode zsh-autosuggestions)
-:x
 $ source ~/.zshrc
 ```
 
@@ -56,7 +52,6 @@ Modifique el valor para el subrayado de las sugerencias
 ```
 $ vi $ZSH_CUSTOM/dbarragan.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=1"
-:x
 $ source ~/.zshrc
 ```
 
