@@ -74,3 +74,4 @@ el uso de cada comando. Puede realizar variaciones sobre la fuente y el destino
 ## Referencias
 * https://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
 * https://joshua14.homelinux.org/blog/?p=1788
+* https://www.tecmint.com/file-sharing-from-linux-commandline/
