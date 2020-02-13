@@ -61,6 +61,29 @@ vi ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 PROMPT='${ret_status} $(git_prompt_info)'
 ```
 
+### Plugin zsh-history-substring-search
+
+Para instalar y habilitar el plugin zsh-history-substring-search realice lo siguiente
+
+Clone el repositorio en el directorio de plugins de oh-my-zsh
+```
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+```
+
+Adicione el plugin a la lista de plugins activos
+```
+$ vi ~/.zshrc
+plugins=(git vi-mode zsh-autosuggestions history-substring-search)
+$ source ~/.zshrc
+```
+
+Adicione las siguientes lineas para autocompletar con las flechas del teclado
+```
+$ vi ~/.zshrc
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+```
+
 ## FAQ
 * No puedo ejecutar el script de instalación de plugins de oh-my-zsh, ¿que hago?
 R / Use este comando para indicar a través de una variable la ubicación del directorio de
@@ -81,3 +104,4 @@ https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 * https://www.youtube.com/watch?v=UgDz_9i2nwc
 * https://github.com/zsh-users/zsh-autosuggestions
 * https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vi-mode
+* https://github.com/zsh-users/zsh-history-substring-search
