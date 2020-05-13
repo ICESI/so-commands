@@ -82,6 +82,47 @@ Adicione las siguientes lineas para autocompletar con las flechas del teclado
 $ vi ~/.zshrc
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+$ source ~/.zshrc
+```
+
+### Plugin zsh-completions
+
+Para instalar y habilitar el plugin zsh-completions realice lo siguiente
+```
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+```
+
+Adicione las siguientes lineas para autocompletar con dos tabulados
+```
+$ vi ~/.zshrc
+plugins=(git vi-mode zsh-autosuggestions history-substring-search zsh-completions)
+autoload -U compinit && compinit
+$ source ~/.zshrc
+```
+
+#### AWS EKS
+
+Para adicionar un completion, en este caso para el gestor de creación de cluster de eks de nombre eksctl
+```
+eksctl completion zsh > ~/.oh-my-zsh/completions/_eksctl
+```
+
+Para usarlos, digite eksctl y dos tabulados
+```
+➜  ~ eksctl completion 
+completion  -- Generates shell completion scripts for bash, zsh or fish
+create      -- Create resource(s)
+delete      -- Delete resource(s)
+drain       -- Drain resource(s)
+get         -- Get resource(s)
+help        -- Help about any command
+scale       -- Scale resources(s)
+set         -- Set values
+unset       -- Unset values
+update      -- Update resource(s)
+upgrade     -- Upgrade resource(s)
+utils       -- Various utils
+version     -- Output the version of eksctl
 ```
 
 ## FAQ
@@ -105,3 +146,4 @@ https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 * https://github.com/zsh-users/zsh-autosuggestions
 * https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vi-mode
 * https://github.com/zsh-users/zsh-history-substring-search
+* https://github.com/zsh-users/zsh-completions
